@@ -1,0 +1,39 @@
+services:
+  mysql:
+    build:
+      context: ./mysql
+      dockerfile: Dockerfile
+    container_name: mysql_profiler
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: testdb
+      MYSQL_USER: testuser
+      MYSQL_PASSWORD: testpassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql/init-scripts:/docker-entrypoint-initdb.d
+    networks:
+      - profiler-network
+
+  profiler:
+    build:
+      context: ./python
+      dockerfile: Dockerfile
+    container_name: query_profiler
+    depends_on:
+      - mysql
+    environment:
+      DB_HOST: mysql
+      DB_USER: testuser
+      DB_PASSWORD: testpassword
+      DB_DATABASE: testdb
+    volumes:
+      - ./output-report:/app/reports
+      - ./input-sql:/app/inputs
+    networks:
+      - profiler-network
+
+networks:
+  profiler-network:
+    driver: bridge
