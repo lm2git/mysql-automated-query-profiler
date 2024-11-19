@@ -35,7 +35,7 @@ MYSQL-QUERY-PROFILING
 
 ### Prerequisites
 
-- Docker and Docker Compose installed on your system.
+- Docker (https://docs.docker.com/engine/install/) Docker Compose (https://docs.docker.com/compose/install/) installed on your system.
 - Basic understanding of MySQL and Python.
 
 ### Step-by-Step Guide
