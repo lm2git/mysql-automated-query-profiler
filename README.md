@@ -1,5 +1,5 @@
 
-# MySQL Query Profiling Service
+# [![mysql](https://skillicons.dev/icons?i=mysql&perline=3)] MySQL Query Profiling Service
 
 This project provides an end-to-end setup for profiling MySQL queries. The system measures CPU usage during query execution, generating detailed reports for performance analysis. It leverages Docker containers to streamline setup and isolate dependencies.
 
