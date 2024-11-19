@@ -42,8 +42,8 @@ MYSQL-QUERY-PROFILING
 
 1. Clone this repository:
    ```bash
-   git clone <repository-url>
-   cd MYSQL-QUERY-PROFILING
+   git clone https://github.com/lm2git/mysql-automated-query-profiler.git
+   cd mysql-automated-query-profiler
    ```
 
 2. Place your sql init dataset script in the `mysql/init-scripts/init.sql` , then place your SQL queries in the `input-sql/testing-queries.sql` file. 
